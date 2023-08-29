@@ -30,6 +30,11 @@ public class App
         yasmin.nacionalidade = "Brasil";
         yasmin.endereco = endereco;
 
+        Candidato mirelle = new Candidato();
+        yasmin.nomeCompleto = "Mirelle da Silva";
+        yasmin.dataNascimento = LocalDate.of(2006, 10, 26);
+
+
         Escolaridade e1 = new Escolaridade();
         e1.nomeCurso = "Sistema para Internet";
         e1.nomeInstituicao = "Senai";
@@ -46,16 +51,20 @@ public class App
         // list.add(e1);
         // list.add(e2);
 
-        yasmin.escolaridades = Arrays.asList(e1,e2);
+       // yasmin.escolaridades = Arrays.asList(e1,e2);
 
         System.out.println("Nome Completo "+yasmin.nomeCompleto);
-        System.out.println("Idade: "+ Period.between(yasmin.dataNascimento, 
-            LocalDate.now()).getYears());
-        System.out.println("Endereço:" + yasmin.endereco.logradouro);
+        System.out.println("Idade: "+ yasmin.calcularIdade()); 
 
-        for (Escolaridade escolaridade : yasmin.escolaridades) {
-            System.out.println(escolaridade.nomeCurso+" - "+escolaridade.nomeInstituicao);
-        }
+        System.out.println("************************************");
+
+        System.out.println("Nome Completo "+mirelle.nomeCompleto);
+        System.out.println("Idade: "+ mirelle.calcularIdade());
+
+
+    //    for (Escolaridade escolaridade : yasmin.escolaridades) {
+    //        System.out.println(escolaridade.nomeCurso+" - "+escolaridade.nomeInstituicao);
+    //    }
 
     }
 }
